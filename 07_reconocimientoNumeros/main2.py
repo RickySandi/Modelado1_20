@@ -25,4 +25,6 @@ grupos = [cv2.boundingRect(g) for g in pos]
 print(grupos)
 
 for g in grupos:
-    cv2.rectangle((img2,g[0],g[1]),((img2,g[0],g[1])))
+    cv2.rectangle(img2, (g[0], g[1]),  (g[0] + g[2], g[1] + g[3]), (255,0,0), 3)
+
+print(grupos)
