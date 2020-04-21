@@ -46,6 +46,16 @@ class Logistica:
         J = J.sum() + parametroRegul
         return J
 
+    def funcionCostoVector(self, theta, etiqueta):
+        theta = theta.reshape(theta.size, 1)
+        y = (self.y == etiqueta)
+        m = self.y.shape[0]
+        h = self.sigmoide(self.X.dot(theta))
+        parametroRegul = (self.lambdaReg / m) * (numpy.power(self.Theta, 2).sum())
+        J = (1. / m) * (-y.transpose().dot(numpy.log(h)) - (1. - y).transpose().dot(numpy.log(1. - h)))
+        #J = J.sum() + parametroRegul
+        return J
+
     def gradiente(self, theta, etiqueta):
         theta = theta.reshape(theta.size, 1)
         y = (self.y == etiqueta)
@@ -101,6 +111,8 @@ class Logistica:
         # print(" con ", prediccion[num_predic] * 100, "% de certeza")
 
         return num_predic
+
+
 
 
 
