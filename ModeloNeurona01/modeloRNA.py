@@ -109,15 +109,15 @@ def gradiente(X,y,theta):
 
 
     
-# data = loadmat("digitos.mat")
-# X = data["X"]
-# y = data["y"]
-# m,n = X.shape
-# # topologia dela red
-# capa_entrada = n+1
-# capa_salida = 10
-# capa_oculta = 26
-# ##################### 
-# Theta = numpy.ones(capa_entrada * (capa_oculta-1) + capa_oculta * capa_salida)
-# print (Theta.shape)
-# print (funcionCosto(X ,y, Theta))
+data = loadmat("digitos.mat")
+X = data["X"]
+y = data["y"]
+m,n = X.shape
+# topologia dela red
+capa_entrada = n+1
+capa_salida = 10
+capa_oculta = 26
+##################### 
+Theta = numpy.ones(capa_entrada * (capa_oculta-1) + capa_oculta * capa_salida)
+print (Theta.shape)
+print (funcionCosto(X ,y, Theta))

@@ -44,18 +44,18 @@ def funcionCosto(X, y, theta):
    
 
     
-data = loadmat("digitos.mat")
-X = data["X"]
-y = data["y"]
-m,n = X.shape
-# topologia dela red
-capa_entrada = n+1
-capa_salida = 10
-capa_oculta = 26
-##################### 
-Theta = numpy.ones(capa_entrada * (capa_oculta-1) + capa_oculta * capa_salida)
-print (Theta.shape)
-print (funcionCosto(X ,y, Theta))
+# data = loadmat("digitos.mat")
+# X = data["X"]
+# y = data["y"]
+# m,n = X.shape
+# # topologia dela red
+# capa_entrada = n+1
+# capa_salida = 10
+# capa_oculta = 26
+# ##################### 
+# Theta = numpy.ones(capa_entrada * (capa_oculta-1) + capa_oculta * capa_salida)
+# print (Theta.shape)
+# print (funcionCosto(X ,y, Theta))
 
 
 
@@ -78,8 +78,8 @@ prediccion, probabilidad = frontPropagation(imagen)
 print(prediccion, " con ", probabilidad)
 '''
 
-'''
-imagen = cv2.imread("prueba3.jpg")
+
+imagen = cv2.imread("photo_2.jpg")
 imagenGris = cv2.cvtColor(imagen, cv2.COLOR_RGB2GRAY)
 imagenGris = cv2.GaussianBlur(imagenGris, (5,5), 0)
 
@@ -98,10 +98,9 @@ for g in ventanas:
     digito = cv2.dilate(digito, (3,3,))
     aux = digito.T.flatten()
     aux = aux.reshape(aux.size,1)
-    prediccion, probabilidad = frontPropagation(aux)
-    print(prediccion, " con ", probabilidad)
-    cv2.imshow("d", digito)
-    cv2.waitKey()
+    # prediccion, probabilidad = frontPropagation(aux)
+    # print(prediccion, " con ", probabilidad)
+    # cv2.imshow("d", digito)
+    # cv2.waitKey()
 cv2.imshow("Digitos", imagen)
 cv2.waitKey() 
-'''
